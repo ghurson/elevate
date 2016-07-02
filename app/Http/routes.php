@@ -13,8 +13,8 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::get('/test', function () {
+Route::get('/cars', 'CarController@index');
+Route::get('/cars/{car}', 'CarController@show');
+Route::get('/cars/tickets/{car}', 'CarController@show_tickets');
 
-    print 'testing';
-
-});
+Route::get('/order', 'OrderController@index');

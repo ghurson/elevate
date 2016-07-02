@@ -41,9 +41,12 @@
 <div class="container">
     <div class="content">
         <div class="title">
-            @yield('testing')
+            @yield('title')
         </div>
 
+        @yield('content')
+
+        @yield('update')
 
     </div>
 </div>

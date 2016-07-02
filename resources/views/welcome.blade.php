@@ -1,5 +1,5 @@
-@extends('home')
+@extends('shell')
 
-@section('testing')
+@section('content')
 hello world
 @stop
