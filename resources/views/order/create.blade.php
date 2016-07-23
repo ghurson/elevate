@@ -1,16 +1,38 @@
-@extends("shell"))
+@extends("shell")
 
 
 @section('title')
-    Place your oder here, {{ $user->name }}
+    Order Creation Page
 @stop
 
-@section('content')
+@section('left-content')
 
-    <form action="">
+    <p>Place your order here</p>
 
-        <input type="text" name="customer_name" placeholder="Your Name">
+    @foreach($orders as $order)
+
+        <p>
+            <a href="/order/{{ $order->id }}">
+                {{ $order->title }}
+            </a>
+        </p>
+
+    @endforeach
+
+
+@stop
+
+@section('right-content')
+
+    <form action="/order" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <p>hide me:</p>
+        <input type="text" value="{{ Auth::ID() }}" name="user_id">
+
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="pickup" placeholder="Pickup">
         <input type="submit">
-        
+
     </form>
+    <a href="/order/{{$order-id}}/delete" class="button">Delete Order</a>
 @stop

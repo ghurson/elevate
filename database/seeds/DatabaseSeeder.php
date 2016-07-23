@@ -5,6 +5,7 @@ use App\Car;
 use App\Driver;
 use App\Ticket;
 use App\User;
+use App\Order;
 
 
 class DatabaseSeeder extends Seeder
@@ -69,6 +70,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Ticket::create([
+            'body' => 'don\'t hit the children',
+            'car_id' => '2',
+        ]);
+
+        Ticket::create([
             'body' => 'change your oil',
             'car_id' => '3',
         ]);
@@ -81,6 +87,11 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Brendan Kiel',
             'email' => 'ghurson@gmail.com'
+        ]);
+
+        Order::create([
+            'title' => 'Prom Limo',
+            'pickup' => '4-20-2016'
         ]);
 
     }

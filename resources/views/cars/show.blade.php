@@ -1,23 +1,23 @@
 @extends('shell')
 
 @section('title')
-    {{ $car->make }}
+    View All Cars
 @stop
 
-@section('content')
-    {{ $car }}
+@section('left-content')
+
+    @foreach($cars as $car)
+        <p>
+            <a href="/cars/{{$car->id}}">
+                {{$car->model}} : ({{count($car->tickets)}} Tickets)
+            </a>
+        </p>
+    @endforeach
+
+
 @stop
 
-@section('update')
+@section('right-content')
 
-    <br>
-    <br>
-    <br>
-
-    <form action="#" method="post">
-        <input type="text" name="name">
-        <input type="hidden" name="id" value="{{ $car->id }}">
-        <input type="submit">
-    </form>
 
 @stop
