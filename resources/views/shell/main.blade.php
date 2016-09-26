@@ -13,15 +13,17 @@
 <header>
 
 
-    <div class="row">
-        <h1>@yield('title')</h1>
+    <div class="row text-center">
+        <h1>@yield('title', 'Elevate Application')</h1>
     </div>
+
+    @include('partials.menu')
 
 </header>
 
 <div class="content">
 
-
+@yield('content')
 
     <div class="row">
         <div class="medium-4 column">
@@ -36,16 +38,7 @@
     </div>
 </div>
 
-<footer>
-    <div class="row">
-        <div class="medium-6 columns">
-            <p><a href="/">&laquo; Return Home</a></p>
-        </div>
-        <div class="medium-6 column">
-            <p><a href="/home">Laravel Home</a></p>
-        </div>
-    </div>
-</footer>
+@include('partials.footer')
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

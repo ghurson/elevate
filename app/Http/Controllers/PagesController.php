@@ -11,7 +11,7 @@ class PagesController extends Controller
     //
 
     static function home(){
-        return view("welcome");
+        return view("pages.home");
     }
 
 }
